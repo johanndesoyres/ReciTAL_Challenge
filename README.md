@@ -9,8 +9,7 @@ For this challenge I was asked to create a basic API for the backend of a manage
 The API was designed with FastAPI, SQL Alchemy and Pydantic. Thanks to this API you can interact with a 
 SQL database (SQLite). The database contains two tables :
 
-- Users
-- Properties
+![](https://github.com/johanndesoyres/ReciTAL_Challenge/blob/master/DBschema.png)
 
 
 A property can be owned by a user thanks to the "owner_id". Here are the operations that the API
