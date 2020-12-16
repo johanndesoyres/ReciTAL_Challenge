@@ -1,0 +1,9 @@
+- To run the API, please execute the following command : 
+
+CD WORKING_DIR
+uvicorn myAPI.main:app --reload
+
+- To run unit tests, please execute the following command :
+
+CD WORKING_DIR
+pytest myAPI/tests/test_myAPI.py --exitfirst -vv --showlocals
