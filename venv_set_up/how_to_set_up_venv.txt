@@ -1,8 +1,8 @@
-To set up venv :
+To set up venv:
 
 cd WORKING_DIR
 python3 -m venv env
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
 env/Scripts/activate
-cd venv_set_up
+cd ReciTAL_challenge/venv_set_up
 pip install -r requirements.txt
