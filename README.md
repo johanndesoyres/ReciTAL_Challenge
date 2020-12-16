@@ -1,9 +1,11 @@
 # ReciTAL Challenge
 
+For this challenge I was asked to create a basic API for the backend of a management property plateform.
+
 
 ![](https://github.com/johanndesoyres/ReciTAL_Challenge/blob/master/SwaggerUI_Screenshot.png)
 
-For this challenge I was asked to create a basic API for the backend of a management property plateform.
+
 The API was designed with FastAPI, SQL Alchemy and Pydantic. Thanks to this API you can interact with a 
 SQL database (SQLite). The database contains two tables :
 
