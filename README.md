@@ -1,5 +1,8 @@
 # ReciTAL Challenge
 
+
+![](https://github.com/johanndesoyres/ReciTAL_Challenge/blob/master/SwaggerUI_Screenshot.png)
+
 For this challenge I was asked to create a basic API for the backend of a management property plateform.
 The API was designed with FastAPI, SQL Alchemy and Pydantic. Thanks to this API you can interact with a 
 SQL database (SQLite). The database contains two tables :
@@ -25,4 +28,3 @@ allows you to do :
 You can test all these operations with the Swagger UI (http://127.0.0.1:8000/docs) once you have
 downloaded the git repository, set up the virtual environment and run the API.
 
-![](https://github.com/johanndesoyres/ReciTAL_Challenge/blob/master/SwaggerUI_Screenshot.png)
