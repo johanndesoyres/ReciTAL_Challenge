@@ -117,10 +117,42 @@ def test_post_valid_user(create_user):
     }
 
 
-def test_post_existing_user(create_user):
+def test_post_existing_user_full_name(create_user):
     response = client.post("/users/", json={
         "full_name": "Pierre Dumont",
+        "email": "pierre@gmail.com",
+        "age": 45,
+        "gender": "M",
+        "phone": "0738492568",
+        "salary": 2000,
+        "job": "waiter"
+    })
+    client.delete("/users/1")
+    assert response.status_code == 400
+    assert response.json() == {
+        'detail': 'User with the same full name is already registered'}
+
+
+def test_post_existing_user_email(create_user):
+    response = client.post("/users/", json={
+        "full_name": "Pierre Dumon",
         "email": "pierre.dumont@gmail.com",
+        "age": 45,
+        "gender": "M",
+        "phone": "0738492564",
+        "salary": 2000,
+        "job": "waiter"
+    })
+    client.delete("/users/1")
+    assert response.status_code == 400
+    assert response.json() == {
+        'detail': 'User with the same email is already registered'}
+
+
+def test_post_existing_user_phone(create_user):
+    response = client.post("/users/", json={
+        "full_name": "Pierre Dumo",
+        "email": "pierre.dumo@gmail.com",
         "age": 45,
         "gender": "M",
         "phone": "0738492567",
@@ -129,7 +161,8 @@ def test_post_existing_user(create_user):
     })
     client.delete("/users/1")
     assert response.status_code == 400
-    assert response.json() == {'detail': 'User already registered'}
+    assert response.json() == {
+        'detail': 'User with the same phone is already registered'}
 
 
 def test_get_existing_user(create_user):

@@ -49,7 +49,15 @@ def create_user(user: schemas.UserCreate, db: Session = Depends(get_db)):
     db_user = crud.get_user_by_email(db=db, email=user.email)
     if db_user:
         raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST, detail="User already registered")
+            status_code=status.HTTP_400_BAD_REQUEST, detail="User with the same email is already registered")
+    db_user = crud.get_user_by_full_name(db=db, full_name=user.full_name)
+    if db_user:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST, detail="User with the same full name is already registered")
+    db_user = crud.get_user_by_phone(db=db, phone=user.phone)
+    if db_user:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST, detail="User with the same phone is already registered")
     return crud.create_user(db=db, user=user)
 
 
